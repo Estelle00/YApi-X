@@ -13,7 +13,7 @@ jobs:
     - name: push
       run: |
         VERSION=${GITHUB_REF:11}
-        docker login -u jayfong -p ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+        docker login -u petter45 -p ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
         docker build -f docker/Dockerfile -t petter45/yapi-x:latest -t petter45/yapi-x:${VERSION} .
         docker push petter45/yapi-x:latest
         docker push petter45/yapi-x:${VERSION}
